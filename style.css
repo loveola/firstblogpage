@@ -1,0 +1,361 @@
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General page style */
+body {
+  background-color: #f2f2f4;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.nav-bar {
+  background-color: #fdfdfd;
+  width: 100%;
+  height: 80px;
+  
+  padding: 0 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: space-between; /* puts logo left, links right */
+  align-items: center;   
+           /* vertically centers them */
+}
+
+/* Navigation list */
+ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  
+}
+
+/* Navigation links */
+ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #333;            /* stays same on hover */
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+/* Underline effect using pseudo-element */
+ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ee32a0;
+  transform: scaleX(0);       /* hidden at first */
+  transform-origin: left;     /* start growing from the left */
+  transition: transform 0.8s ease; /* smooth animation */
+}
+
+/* Hover effect: line grows smoothly */
+ul li a:hover::after {
+  transform: scaleX(1);       /* grows to full width */
+  transform-origin: right;    /* shrinks smoothly when unhovered */
+}
+#home {
+  text-align: center;
+  padding-top: 10%;
+  height: 70vh; /* use viewport height */
+  background-color: #ee32a0;
+  transition:background-color 3s;
+
+  
+}#home:hover{
+  background-color: #865170;
+}
+/* Container that centers the image */
+.div {
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  align-items: center;      /* centers vertically */
+  margin-top: 50px;
+}
+
+/* Glowing circular image */
+
+.arrow {
+  border-radius: 60px; 
+  border: none;
+  background-color: black;
+  width: 50px; 
+  height: 60px;
+  margin-top: 10%;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.fa-arrow-down {
+  color: white;
+  font-size: 20px;
+}
+
+/* When button is hovered */
+.arrow:hover {
+  background-color: #865170;
+  box-shadow: 0 0 20px #ee32a0; 
+}
+
+/* When button is hovered, also change the arrow color */
+.arrow:hover .fa-arrow-down {
+  color: black;
+}
+
+.About-me{
+  margin: 60px;
+  margin-left: 18%;
+  padding: 50px;
+}
+#about-me{
+  text-align: center;
+}
+.about-content{
+   letter-spacing: 0.5px;
+   padding: 20px;
+   margin-left: -3%;
+}
+img {
+  margin-left: -65%;
+  /*width: 200px;*/     
+  height: 250px;
+  border-radius: 50%;            /* makes it circular */
+  border: 4px solid #fdfdfd;     /* pink border */
+  box-shadow: 0 0 20px #ee32a0;  /* pink glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* On hover: slightly enlarge and glow more */
+.img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #ee32a0;
+}
+.div img {
+  /*width: 230px;
+  height: 230px;*/
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 25px #ee32a0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.div img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #ee32a0;
+}
+
+
+
+
+
+/* ---------------- GOALS SECTION ---------------- */
+#Goals {
+  margin-top: -250px;   /* moves the entire div UP */
+}
+
+.Goals-content {
+  padding: 30px;
+  margin-top: 20px;
+  margin-left: 35%;
+  background-color: #fff;
+  height: 25%;
+  width: 50%;
+  border-radius: 20px;
+  border: 2px solid transparent;  /* subtle border even before hover */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  transition: 
+    border 0.4s ease, 
+    box-shadow 0.4s ease, 
+    transform 0.4s ease; /* makes the hover feel smooth */
+}
+
+.Goals-content:hover {
+  border: 2px solid #ee32a0; /* light pink border shows on hover */
+  box-shadow: 0 0 25px #ee32a0;
+  transform: translateY(-4px); /* slight upward motion */
+}
+
+.actual-goal {
+  display: flex;             
+  align-items: center;       
+  gap: 15px;                 
+  margin-left: 45px;
+  margin-top: -25px;
+}
+
+.button {
+  border-radius: 50%;
+  padding: 10px;
+  width: 35px;
+  height: 35px;
+  background-color: #ee32a0;
+  color: white;
+  font-weight: bold;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px #ee32a0;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1); /* makes the button pop slightly */
+}
+
+
+
+
+#contact {
+  background-color: #ee32a0;
+  margin-top: 200px;
+  height: 200px;
+  padding-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;   /* stack text and icons vertically */
+  align-items: center;      /* center horizontally */
+  justify-content: center;  /* center vertically */
+  gap: 20px;
+  transition: background-color 3s;                /* small space between text and icons */
+}
+#contact:hover{
+  background-color: #865170;
+}
+/* Center and style footer text */
+#contact p {
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;                /* remove default top margin */
+}
+
+/* Center footer icons in a row */
+.icons-footer {
+  display: flex;
+  gap: 20px;                /* space between icons */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optional: add hover animation for icons */
+.icons-footer i {
+  color: black;
+  font-size: 22px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icons-footer i:hover {
+  color: #681746;
+  transform: scale(1.2);
+}
+
+/* Container holding image + goals
+.div, 
+#Goals {
+  display: flex;
+  align-items: flex-start;
+}
+
+Make the wrapper hold both horizontally 
+.div {
+  justify-content: center;
+  gap: 60px; space between image and goals 
+  margin: 80px auto;
+  width: 80%;
+}
+
+ Image styling 
+.div img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 25px #ee32a0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.div img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #ee32a0;
+}*/
+
+/* Goals container 
+
+#Goals {
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  width: 60%;
+  margin-left: 30%;
+}
+
+Each goal item (button + text) 
+#Goals button {
+  background-color: #ee32a0;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-weight: bold;
+  margin-right: 15px;
+  box-shadow: 0 0 8px #ee32a0;
+}
+
+#Goals div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.Goals-content {
+  color: #333;
+  line-height: 1.5;
+  font-size: 16px;
+  margin-left: 20%;
+}*/
+
+/* ---------------- OTHER PAGE CONTENT ---------------- */
+
+
+/*
+#About-me {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#About-me img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+#Goals {
+  width: 80%;
+  margin: 40px auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#Goals ol {
+  padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+*/ please help me make my goals-content be properly positioned beside the picture and spaced properly among themselves
